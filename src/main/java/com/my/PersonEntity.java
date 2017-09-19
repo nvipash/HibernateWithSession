@@ -1,6 +1,7 @@
 package com.my;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "person", schema = "db_jdbc", catalog = "")
@@ -10,6 +11,7 @@ public class PersonEntity {
     private String name;
     private String email;
     private CityEntity cityByCity;
+    private List<BookEntity> books;
 
     @Id
     @Column(name = "IDPerson", nullable = false)
@@ -83,5 +85,14 @@ public class PersonEntity {
 
     public void setCityByCity(CityEntity cityByCity) {
         this.cityByCity = cityByCity;
+    }
+
+    @ManyToMany(mappedBy = "persons")
+    public List<BookEntity> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<BookEntity> books) {
+        this.books = books;
     }
 }

@@ -1,6 +1,7 @@
 package com.my;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "book", schema = "db_jdbc", catalog = "")
@@ -9,6 +10,7 @@ public class BookEntity {
     private String bookName;
     private String author;
     private int amount;
+    private List<PersonEntity> persons;
 
     @Id
     @Column(name = "IDBook", nullable = false)
@@ -72,5 +74,15 @@ public class BookEntity {
         result = 31 * result + (author != null ? author.hashCode() : 0);
         result = 31 * result + amount;
         return result;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "personbook", catalog = "", schema = "db_jdbc", joinColumns = @JoinColumn(name = "IDBook", referencedColumnName = "IDBook", nullable = false), inverseJoinColumns = @JoinColumn(name = "IDPerson", referencedColumnName = "IDPerson", nullable = false))
+    public List<PersonEntity> getPersons() {
+        return persons;
+    }
+
+    public void setPersons(List<PersonEntity> persons) {
+        this.persons = persons;
     }
 }
