@@ -54,7 +54,10 @@ public class Main {
             System.out.format("%s\n", city.getCity());
         }
 
-        query = session.createQuery("from " + "CityEntity where city='Poltava'");
+
+
+        query = session.createQuery("from " + "CityEntity where city=:code");
+        query.setParameter("code", "Poltava");
         System.out.format("\n%s:  %s\n", "Lviv", "Surname");
         CityEntity city = (CityEntity) query.list().get(0);
         for (PersonEntity obj : city.getPeopleByCity()) {
