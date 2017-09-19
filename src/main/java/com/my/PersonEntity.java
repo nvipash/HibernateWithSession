@@ -21,6 +21,7 @@ public class PersonEntity {
         this.idPerson = idPerson;
     }
 
+    @Basic
     @Column(name = "Surname", nullable = false, length = 25)
     public String getSurname() {
         return surname;
@@ -30,6 +31,7 @@ public class PersonEntity {
         this.surname = surname;
     }
 
+    @Basic
     @Column(name = "Name", nullable = false, length = 25)
     public String getName() {
         return name;
@@ -39,6 +41,7 @@ public class PersonEntity {
         this.name = name;
     }
 
+    @Basic
     @Column(name = "Email", nullable = true, length = 45)
     public String getEmail() {
         return email;

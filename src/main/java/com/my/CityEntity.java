@@ -1,14 +1,13 @@
 package com.my;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "city", schema = "db_jdbc", catalog = "")
 public class CityEntity {
     private String city;
+    private Collection<PersonEntity> peopleByCity;
 
     @Id
     @Column(name = "City", nullable = false, length = 25)
@@ -35,5 +34,14 @@ public class CityEntity {
     @Override
     public int hashCode() {
         return city != null ? city.hashCode() : 0;
+    }
+
+    @OneToMany(mappedBy = "cityByCity")
+    public Collection<PersonEntity> getPeopleByCity() {
+        return peopleByCity;
+    }
+
+    public void setPeopleByCity(Collection<PersonEntity> peopleByCity) {
+        this.peopleByCity = peopleByCity;
     }
 }
