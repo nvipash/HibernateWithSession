@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import javax.transaction.Transactional;
 import java.util.Scanner;
 
 
@@ -29,10 +30,15 @@ public class Main {
 
             ReadAllTable(session);
 
-            ReadCityFilter(session);
+            //ReadCityFilter(session);
 
+            insertCity(session);
 
-        } finally { session.close(); }
+            //insertPerson(session);
+
+            //ReadCityFilter(session);
+
+        } finally { session.close();  }
     }
 
     private static void ReadAllTable(Session session){
@@ -90,8 +96,8 @@ public class Main {
 
         Query query = session.createQuery("from " + "CityEntity where city=:code");
         query.setParameter("code", city_in);
-        if(query==null) {
-            System.out.format("\n%s: %s\n", "Lviv", "Surname");
+        if(!query.list().isEmpty()) {
+            System.out.format("\n%s: %s\n", city_in, "Surname");
             CityEntity city = (CityEntity) query.list().get(0);
 
             for (PersonEntity obj : city.getPeopleByCity())
@@ -100,11 +106,58 @@ public class Main {
         else System.out.println("invalid name of city");
     }
 
-    private static void insertDataCity(Session session){
+    private static void insertCity(Session session){
         Scanner input = new Scanner(System.in);
         System.out.println("Input a new name city: ");
         String newcity = input.next();
-
-
+        session.beginTransaction();
+        CityEntity cityEntity=new CityEntity(newcity);
+        session.save(cityEntity);
+        session.getTransaction().commit();
+        System.out.println("end insert city");
     }
+
+    private static void insertPerson(Session session){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Input new Person Surname: ");
+        String surname_new = input.next();
+        System.out.println("Input new Person Surname: ");
+        String name_new = input.next();
+        System.out.println("Input the City for Person: ");
+        String city = input.next();
+        System.out.println("Input new Person Email: ");
+        String email = input.next();
+
+        session.beginTransaction();
+        PersonEntity personEntity=new PersonEntity(surname_new,name_new,city,email);
+        session.save(personEntity);
+        session.getTransaction().commit();
+        System.out.println("end insert person");
+    }
+
+    private static void AddBookForPerson(Session session){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Choose Person Surname: ");
+        String surname = input.next();
+        System.out.println("Input Name Book : ");
+        String book = input.next();
+
+        session.beginTransaction();
+
+        Query query = session.createQuery("from " + "PersonEntity"+"where Surname=");
+        System.out.format("\nTable Person --------------------\n");
+        System.out.format("%3s %-12s %-12s %-10s %s\n", "ID", "Surname", "Name", "City", "Email");
+        for (Object obj : query.list()) {
+            PersonEntity person = (PersonEntity) obj;
+            System.out.format("%3d %-12s %-12s %-10s %s\n", person.getIdPerson(),
+                    person.getSurname(), person.getName(), person.getCityByCity().getCity(), person.getEmail());
+        }
+
+//        PersonEntity personEntity=new PersonEntity(surname,name_new,city,email);
+//        session.save(personEntity);
+        session.getTransaction().commit();
+        System.out.println("end insert boor for person");
+    }
+
+
 }

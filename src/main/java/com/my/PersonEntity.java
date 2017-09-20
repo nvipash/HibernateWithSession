@@ -13,7 +13,17 @@ public class PersonEntity {
     private CityEntity cityByCity;
     private List<BookEntity> books;
 
+    public PersonEntity()
+    {}
+    public PersonEntity(String s,String n,String city,String e){
+        surname=s;
+        name=n;
+        cityByCity=new CityEntity(city);
+        email=e;
+    }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IDPerson", nullable = false)
     public int getIdPerson() {
         return idPerson;
@@ -90,6 +100,15 @@ public class PersonEntity {
     @ManyToMany(mappedBy = "persons")
     public List<BookEntity> getBooks() {
         return books;
+    }
+
+    public void addBookEntity(BookEntity bookEntity){
+        if(!getBooks().contains(bookEntity)){
+            getBooks().add(bookEntity);
+        }
+        if(!bookEntity.getPersons().contains(this)){
+            bookEntity.getPersons().add(this);
+        }
     }
 
     public void setBooks(List<BookEntity> books) {

@@ -9,6 +9,11 @@ public class CityEntity {
     private String city;
     private Collection<PersonEntity> peopleByCity;
 
+    public CityEntity(){}
+    public CityEntity(String c){
+        city=c;
+    }
+
     @Id
     @Column(name = "City", nullable = false, length = 25)
     public String getCity() {

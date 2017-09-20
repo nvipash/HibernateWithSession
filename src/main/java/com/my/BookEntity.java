@@ -13,6 +13,7 @@ public class BookEntity {
     private List<PersonEntity> persons;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "IDBook", nullable = false)
     public int getIdBook() {
         return idBook;

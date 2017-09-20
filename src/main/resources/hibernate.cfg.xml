@@ -4,18 +4,18 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/db_jdbc?useSSL=false</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/db_jdbc?serverTimezone=UTC</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">123456</property>
 
 
         <!-- configuration pool via c3p0-->
-        <property name="hibernate.c3p0.min_size">1</property>
-        <property name="hibernate.c3p0.max_size">5</property>
-        <property name="hibernate.c3p0.timeout">300</property>
-        <property name="hibernate.c3p0.max_statements">50</property>
-        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        <!--<property name="hibernate.c3p0.min_size">1</property>-->
+        <!--<property name="hibernate.c3p0.max_size">5</property>-->
+        <!--<property name="hibernate.c3p0.timeout">300</property>-->
+        <!--<property name="hibernate.c3p0.max_statements">50</property>-->
+        <!--<property name="hibernate.c3p0.idle_test_period">3000</property>-->
         <!-- DEPRECATED very expensive property name="c3p0.validate>-->
 
         <mapping class="com.my.BookEntity"/>
