@@ -1,5 +1,7 @@
 package com.my;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.Collection;
 

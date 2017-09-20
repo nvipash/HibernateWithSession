@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/Main.java" line="165" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="72b8aa52-5a54-43c1-b9dc-4719e3bb7466" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_c3p0_5_2_10_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/157c36c1-d660-40c0-b23a-b1f86b8b1a76.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/82a73d26-ebd4-462f-b891-81e592a20a06.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="$PROJECT_DIR$/target/classes/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/my/BookEntity.class" afterPath="$PROJECT_DIR$/target/classes/com/my/BookEntity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/my/CityEntity.class" afterPath="$PROJECT_DIR$/target/classes/com/my/CityEntity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/my/PersonEntity.class" afterPath="$PROJECT_DIR$/target/classes/com/my/PersonEntity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HibernateWithSession.iml" afterPath="$PROJECT_DIR$/HibernateWithSession.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/my/BookEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/my/BookEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/my/CityEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/my/CityEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/my/PersonEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/my/PersonEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
@@ -38,7 +36,23 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand />
+    <expand>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="db_jdbc@localhost" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="db_jdbc@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="db_jdbc" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="db_jdbc@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="db_jdbc" type="e3449647:DbNodeDescriptor" />
+        <item name="" type="fce03ad6:DatabaseStructure$GroupNode" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FavoritesManager">
@@ -49,16 +63,20 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="146" column="82" lean-forward="false" selection-start-line="146" selection-start-column="82" selection-end-line="146" selection-end-column="82" />
+            <state relative-caret-position="27">
+              <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
               <folding>
-                <element signature="e#1327#1347#0" expanded="false" />
-                <element signature="e#1906#1924#0" expanded="false" />
-                <element signature="e#2391#2409#0" expanded="false" />
-                <element signature="e#2713#2742#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#ReadAllTable#0;class#Main#0" expanded="false" />
+                <element signature="e#1672#1692#0" expanded="false" />
+                <element signature="e#2251#2269#0" expanded="false" />
+                <element signature="e#2736#2754#0" expanded="false" />
                 <element signature="method#ReadCityFilter#0;class#Main#0" expanded="false" />
+                <element signature="method#ReadBookOfPerson#0;class#Main#0" expanded="false" />
+                <element signature="method#ReadCityTable#0;class#Main#0" expanded="false" />
                 <element signature="method#insertCity#0;class#Main#0" expanded="false" />
                 <element signature="method#insertPerson#0;class#Main#0" expanded="false" />
+                <element signature="method#AddBookForPerson#0;class#Main#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,11 +85,25 @@
       <file leaf-file-name="PersonEntity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/my/PersonEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="90" column="40" lean-forward="false" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
+            <state relative-caret-position="163">
+              <caret line="86" column="14" lean-forward="true" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
               <folding>
+                <element signature="method#PersonEntity#1;class#PersonEntity#0" expanded="false" />
                 <element signature="method#equals#0;class#PersonEntity#0" expanded="false" />
                 <element signature="method#hashCode#0;class#PersonEntity#0" expanded="false" />
+                <element signature="method#addBookEntity#0;class#PersonEntity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CityEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/my/CityEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+              <folding>
+                <element signature="method#equals#0;class#CityEntity#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,11 +131,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/my/BookEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/my/CityEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/my/PersonEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/my/CityEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
       </list>
     </option>
@@ -122,10 +154,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="776" />
+    <option name="x" value="1" />
+    <option name="y" value="301" />
+    <option name="width" value="1641" />
+    <option name="height" value="970" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -143,10 +175,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -339,30 +371,35 @@
       <workItem from="1505850901694" duration="1796000" />
       <workItem from="1505897220359" duration="5861000" />
       <workItem from="1505927970599" duration="5000" />
+      <workItem from="1505932630700" duration="8018000" />
+      <workItem from="1505941283400" duration="1526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23488000" />
+    <option name="totallyTimeSpent" value="36512000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42612752" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42505592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2645631" sideWeight="0.53965783" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27078238" sideWeight="0.54809844" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2645631" sideWeight="0.46034214" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1797066" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27078238" sideWeight="0.45190156" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1797066" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -373,8 +410,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -418,35 +453,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="e#1327#1347#0" expanded="false" />
-            <element signature="e#1906#1924#0" expanded="false" />
-            <element signature="e#2391#2409#0" expanded="false" />
-            <element signature="e#2713#2742#0" expanded="false" />
-            <element signature="method#ReadCityFilter#0;class#Main#0" expanded="false" />
-            <element signature="method#insertCity#0;class#Main#0" expanded="false" />
-            <element signature="method#insertPerson#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/my/CityEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -483,8 +494,10 @@
         <state relative-caret-position="255">
           <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="22" />
           <folding>
+            <element signature="method#PersonEntity#1;class#PersonEntity#0" expanded="false" />
             <element signature="method#equals#0;class#PersonEntity#0" expanded="false" />
             <element signature="method#hashCode#0;class#PersonEntity#0" expanded="false" />
+            <element signature="method#addBookEntity#0;class#PersonEntity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -501,27 +514,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="741">
           <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding>
-            <element signature="e#438#439#0" expanded="false" />
-            <element signature="e#467#468#0" expanded="false" />
-            <element signature="e#508#509#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#652#653#0" expanded="false" />
-            <element signature="e#683#684#0" expanded="false" />
-            <element signature="e#731#732#0" expanded="false" />
-            <element signature="e#771#772#0" expanded="false" />
-            <element signature="e#875#876#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#948#949#0" expanded="false" />
-            <element signature="e#984#985#0" expanded="false" />
-            <element signature="e#1072#1073#0" expanded="false" />
-            <element signature="e#1101#1102#0" expanded="false" />
-            <element signature="e#1142#1143#0" expanded="false" />
-            <element signature="e#1178#1179#0" expanded="false" />
-            <element signature="e#2353#2354#0" expanded="false" />
-            <element signature="e#2411#2412#0" expanded="false" />
-            <element signature="e#2449#2450#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -530,13 +523,17 @@
         <state relative-caret-position="459">
           <caret line="66" column="11" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="66" selection-end-column="11" />
           <folding>
-            <element signature="e#1327#1347#0" expanded="false" />
-            <element signature="e#1906#1924#0" expanded="false" />
-            <element signature="e#2391#2409#0" expanded="false" />
-            <element signature="e#2713#2742#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#ReadAllTable#0;class#Main#0" expanded="false" />
+            <element signature="e#1672#1692#0" expanded="false" />
+            <element signature="e#2251#2269#0" expanded="false" />
+            <element signature="e#2736#2754#0" expanded="false" />
             <element signature="method#ReadCityFilter#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadBookOfPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadCityTable#0;class#Main#0" expanded="false" />
             <element signature="method#insertCity#0;class#Main#0" expanded="false" />
             <element signature="method#insertPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#AddBookForPerson#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -546,8 +543,10 @@
         <state relative-caret-position="1071">
           <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="21" />
           <folding>
+            <element signature="method#PersonEntity#1;class#PersonEntity#0" expanded="false" />
             <element signature="method#equals#0;class#PersonEntity#0" expanded="false" />
             <element signature="method#hashCode#0;class#PersonEntity#0" expanded="false" />
+            <element signature="method#addBookEntity#0;class#PersonEntity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -557,13 +556,17 @@
         <state relative-caret-position="1122">
           <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
-            <element signature="e#1327#1347#0" expanded="false" />
-            <element signature="e#1906#1924#0" expanded="false" />
-            <element signature="e#2391#2409#0" expanded="false" />
-            <element signature="e#2713#2742#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#ReadAllTable#0;class#Main#0" expanded="false" />
+            <element signature="e#1672#1692#0" expanded="false" />
+            <element signature="e#2251#2269#0" expanded="false" />
+            <element signature="e#2736#2754#0" expanded="false" />
             <element signature="method#ReadCityFilter#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadBookOfPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadCityTable#0;class#Main#0" expanded="false" />
             <element signature="method#insertCity#0;class#Main#0" expanded="false" />
             <element signature="method#insertPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#AddBookForPerson#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -594,8 +597,10 @@
         <state relative-caret-position="187">
           <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding>
+            <element signature="method#PersonEntity#1;class#PersonEntity#0" expanded="false" />
             <element signature="method#equals#0;class#PersonEntity#0" expanded="false" />
             <element signature="method#hashCode#0;class#PersonEntity#0" expanded="false" />
+            <element signature="method#addBookEntity#0;class#PersonEntity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -614,27 +619,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="80" column="44" lean-forward="false" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
-          <folding>
-            <element signature="e#438#439#0" expanded="false" />
-            <element signature="e#467#468#0" expanded="false" />
-            <element signature="e#508#509#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#652#653#0" expanded="false" />
-            <element signature="e#683#684#0" expanded="false" />
-            <element signature="e#731#732#0" expanded="false" />
-            <element signature="e#771#772#0" expanded="false" />
-            <element signature="e#875#876#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#948#949#0" expanded="false" />
-            <element signature="e#984#985#0" expanded="false" />
-            <element signature="e#1072#1073#0" expanded="false" />
-            <element signature="e#1101#1102#0" expanded="false" />
-            <element signature="e#1142#1143#0" expanded="false" />
-            <element signature="e#1178#1179#0" expanded="false" />
-            <element signature="e#2353#2354#0" expanded="false" />
-            <element signature="e#2411#2412#0" expanded="false" />
-            <element signature="e#2449#2450#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -643,13 +628,17 @@
         <state relative-caret-position="306">
           <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
-            <element signature="e#1327#1347#0" expanded="false" />
-            <element signature="e#1906#1924#0" expanded="false" />
-            <element signature="e#2391#2409#0" expanded="false" />
-            <element signature="e#2713#2742#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#ReadAllTable#0;class#Main#0" expanded="false" />
+            <element signature="e#1672#1692#0" expanded="false" />
+            <element signature="e#2251#2269#0" expanded="false" />
+            <element signature="e#2736#2754#0" expanded="false" />
             <element signature="method#ReadCityFilter#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadBookOfPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadCityTable#0;class#Main#0" expanded="false" />
             <element signature="method#insertCity#0;class#Main#0" expanded="false" />
             <element signature="method#insertPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#AddBookForPerson#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -675,8 +664,10 @@
         <state relative-caret-position="1071">
           <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="21" />
           <folding>
+            <element signature="method#PersonEntity#1;class#PersonEntity#0" expanded="false" />
             <element signature="method#equals#0;class#PersonEntity#0" expanded="false" />
             <element signature="method#hashCode#0;class#PersonEntity#0" expanded="false" />
+            <element signature="method#addBookEntity#0;class#PersonEntity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -686,13 +677,17 @@
         <state relative-caret-position="1122">
           <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
-            <element signature="e#1327#1347#0" expanded="false" />
-            <element signature="e#1906#1924#0" expanded="false" />
-            <element signature="e#2391#2409#0" expanded="false" />
-            <element signature="e#2713#2742#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#ReadAllTable#0;class#Main#0" expanded="false" />
+            <element signature="e#1672#1692#0" expanded="false" />
+            <element signature="e#2251#2269#0" expanded="false" />
+            <element signature="e#2736#2754#0" expanded="false" />
             <element signature="method#ReadCityFilter#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadBookOfPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadCityTable#0;class#Main#0" expanded="false" />
             <element signature="method#insertCity#0;class#Main#0" expanded="false" />
             <element signature="method#insertPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#AddBookForPerson#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -741,8 +736,10 @@
         <state relative-caret-position="255">
           <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="22" />
           <folding>
+            <element signature="method#PersonEntity#1;class#PersonEntity#0" expanded="false" />
             <element signature="method#equals#0;class#PersonEntity#0" expanded="false" />
             <element signature="method#hashCode#0;class#PersonEntity#0" expanded="false" />
+            <element signature="method#addBookEntity#0;class#PersonEntity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -759,27 +756,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="741">
           <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding>
-            <element signature="e#438#439#0" expanded="false" />
-            <element signature="e#467#468#0" expanded="false" />
-            <element signature="e#508#509#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#652#653#0" expanded="false" />
-            <element signature="e#683#684#0" expanded="false" />
-            <element signature="e#731#732#0" expanded="false" />
-            <element signature="e#771#772#0" expanded="false" />
-            <element signature="e#875#876#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#948#949#0" expanded="false" />
-            <element signature="e#984#985#0" expanded="false" />
-            <element signature="e#1072#1073#0" expanded="false" />
-            <element signature="e#1101#1102#0" expanded="false" />
-            <element signature="e#1142#1143#0" expanded="false" />
-            <element signature="e#1178#1179#0" expanded="false" />
-            <element signature="e#2353#2354#0" expanded="false" />
-            <element signature="e#2411#2412#0" expanded="false" />
-            <element signature="e#2449#2450#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -788,13 +765,17 @@
         <state relative-caret-position="459">
           <caret line="66" column="11" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="66" selection-end-column="11" />
           <folding>
-            <element signature="e#1327#1347#0" expanded="false" />
-            <element signature="e#1906#1924#0" expanded="false" />
-            <element signature="e#2391#2409#0" expanded="false" />
-            <element signature="e#2713#2742#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#ReadAllTable#0;class#Main#0" expanded="false" />
+            <element signature="e#1672#1692#0" expanded="false" />
+            <element signature="e#2251#2269#0" expanded="false" />
+            <element signature="e#2736#2754#0" expanded="false" />
             <element signature="method#ReadCityFilter#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadBookOfPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadCityTable#0;class#Main#0" expanded="false" />
             <element signature="method#insertCity#0;class#Main#0" expanded="false" />
             <element signature="method#insertPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#AddBookForPerson#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -804,8 +785,10 @@
         <state relative-caret-position="1071">
           <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="21" />
           <folding>
+            <element signature="method#PersonEntity#1;class#PersonEntity#0" expanded="false" />
             <element signature="method#equals#0;class#PersonEntity#0" expanded="false" />
             <element signature="method#hashCode#0;class#PersonEntity#0" expanded="false" />
+            <element signature="method#addBookEntity#0;class#PersonEntity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -815,13 +798,17 @@
         <state relative-caret-position="1122">
           <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
-            <element signature="e#1327#1347#0" expanded="false" />
-            <element signature="e#1906#1924#0" expanded="false" />
-            <element signature="e#2391#2409#0" expanded="false" />
-            <element signature="e#2713#2742#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#ReadAllTable#0;class#Main#0" expanded="false" />
+            <element signature="e#1672#1692#0" expanded="false" />
+            <element signature="e#2251#2269#0" expanded="false" />
+            <element signature="e#2736#2754#0" expanded="false" />
             <element signature="method#ReadCityFilter#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadBookOfPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadCityTable#0;class#Main#0" expanded="false" />
             <element signature="method#insertCity#0;class#Main#0" expanded="false" />
             <element signature="method#insertPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#AddBookForPerson#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -847,54 +834,48 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/157c36c1-d660-40c0-b23a-b1f86b8b1a76/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/my/PersonbookEntityPK.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/my/PersonbookEntity.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+    <entry file="file://$PROJECT_DIR$/HibernateWithSession.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="55" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="17" selection-end-column="55" />
-          <folding />
+        <state relative-caret-position="142">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fb154898-4b9f-41aa-b3f3-1deeedc4618c/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="208">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="46" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/my/BookEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="79" column="15" lean-forward="true" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
-          <folding>
-            <element signature="e#438#439#0" expanded="false" />
-            <element signature="e#467#468#0" expanded="false" />
-            <element signature="e#508#509#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#652#653#0" expanded="false" />
-            <element signature="e#683#684#0" expanded="false" />
-            <element signature="e#731#732#0" expanded="false" />
-            <element signature="e#771#772#0" expanded="false" />
-            <element signature="e#875#876#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#948#949#0" expanded="false" />
-            <element signature="e#984#985#0" expanded="false" />
-            <element signature="e#1072#1073#0" expanded="false" />
-            <element signature="e#1101#1102#0" expanded="false" />
-            <element signature="e#1142#1143#0" expanded="false" />
-            <element signature="e#1178#1179#0" expanded="false" />
-            <element signature="e#2353#2354#0" expanded="false" />
-            <element signature="e#2411#2412#0" expanded="false" />
-            <element signature="e#2449#2450#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/my/CityEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="38" column="13" lean-forward="true" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
           <folding>
             <element signature="method#equals#0;class#CityEntity#0" expanded="false" />
           </folding>
@@ -903,27 +884,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/my/PersonEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="90" column="40" lean-forward="false" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
+        <state relative-caret-position="163">
+          <caret line="86" column="14" lean-forward="true" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
           <folding>
+            <element signature="method#PersonEntity#1;class#PersonEntity#0" expanded="false" />
             <element signature="method#equals#0;class#PersonEntity#0" expanded="false" />
             <element signature="method#hashCode#0;class#PersonEntity#0" expanded="false" />
+            <element signature="method#addBookEntity#0;class#PersonEntity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="146" column="82" lean-forward="false" selection-start-line="146" selection-start-column="82" selection-end-line="146" selection-end-column="82" />
+        <state relative-caret-position="27">
+          <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
           <folding>
-            <element signature="e#1327#1347#0" expanded="false" />
-            <element signature="e#1906#1924#0" expanded="false" />
-            <element signature="e#2391#2409#0" expanded="false" />
-            <element signature="e#2713#2742#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#ReadAllTable#0;class#Main#0" expanded="false" />
+            <element signature="e#1672#1692#0" expanded="false" />
+            <element signature="e#2251#2269#0" expanded="false" />
+            <element signature="e#2736#2754#0" expanded="false" />
             <element signature="method#ReadCityFilter#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadBookOfPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#ReadCityTable#0;class#Main#0" expanded="false" />
             <element signature="method#insertCity#0;class#Main#0" expanded="false" />
             <element signature="method#insertPerson#0;class#Main#0" expanded="false" />
+            <element signature="method#AddBookForPerson#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
