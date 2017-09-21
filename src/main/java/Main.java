@@ -8,6 +8,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureQuery;
 import java.util.Scanner;
 
 
@@ -28,30 +30,30 @@ public class Main {
         Session session = getSession();
         try {
 
-            //ReadAllTable(session);
+            ReadAllTable(session);
 
-            //ReadBookOfPerson(session);
+//            ReadBookOfPerson(session);
 
-            //ReadCityFilter(session);
+//            ReadCityFilter(session);
 
-            //ReadCityTable(session);
-            //insertCity(session);
-            //ReadCityTable(session);
+//            ReadCityTable(session);
+//            insertCity(session);
+//            ReadCityTable(session);
 
-            //insertPerson(session);
+//            insertPerson(session);
 
-            //ReadCityFilter(session);
+//            ReadCityFilter(session);
 
-            //AddBookForPerson(session);
-            //ReadAllTable(session);
+//            AddBookForPerson(session);
+//            ReadAllTable(session);
 
 //            ReadCityTable(session);
 //            updateCity(session);
 //            ReadAllTable(session);
 
-            ReadBookOfPerson(session);
-            AddPairPersonBookWithProcedure(session);
-            ReadBookOfPerson(session);
+//            ReadBookOfPerson(session);
+//            AddPairPersonBookWithProcedure(session);
+//            ReadBookOfPerson(session);
 
             System.out.println("Finish work!");
         } finally { session.close(); System.exit(0); }
@@ -97,13 +99,10 @@ public class Main {
         System.out.println("Input name city for Person: ");
         String city_in = input.next();
 
-        Query query = session.createQuery("from " + "CityEntity where city=:code");
-        query.setParameter("code", city_in);
-        if(!query.list().isEmpty()) {
+        CityEntity cityEntity = (CityEntity) session.load( CityEntity.class, city_in);
+        if(cityEntity!=null){
             System.out.format("\n%s: %s\n", city_in, "Surname");
-            CityEntity city = (CityEntity) query.list().get(0);
-
-            for (PersonEntity obj : city.getPeopleByCity())
+            for (PersonEntity obj : cityEntity.getPeopleByCity())
                 System.out.format("    %s\n", obj.getSurname());
         }
         else System.out.println("invalid name of city");
@@ -136,10 +135,12 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("Input a new name city: ");
         String newcity = input.next();
+
         session.beginTransaction();
         CityEntity cityEntity=new CityEntity(newcity);
         session.save(cityEntity);
         session.getTransaction().commit();
+
         System.out.println("end insert city");
     }
 
@@ -168,11 +169,10 @@ public class Main {
         System.out.println("Input new name city: ");
         String newCity = input.next();
 
-        Query query = session.createQuery("from " + "CityEntity where city = :code");
-        query.setParameter("code", city);
-        if(!query.list().isEmpty()){
+        CityEntity cityEntity = (CityEntity) session.load( CityEntity.class, city);
+        if(cityEntity!=null){
             session.beginTransaction();
-            query = session.createQuery("update CityEntity set city=:code1  where city = :code2");
+            Query query = session.createQuery("update CityEntity set city=:code1  where city = :code2");
             query.setParameter("code1", newCity);
             query.setParameter("code2", city);
             int result = query.executeUpdate();
@@ -214,7 +214,6 @@ public class Main {
 
     }
 
-
     private static void AddPairPersonBookWithProcedure(Session session){
         Scanner input = new Scanner(System.in);
         System.out.println("\nInput Surname for Person: ");
@@ -222,17 +221,22 @@ public class Main {
         System.out.println("Input NameBook for Book: ");
         String book = input.next();
 
-        session.beginTransaction();
-        Query query = session.createSQLQuery(
-                "CALL InsertPersonBook(:Person, :Book)")
-                .setParameter("Person", surname)
-                .setParameter("Book", book);
-        session.getTransaction().commit();
+        //to JPA 2.0
+//        Query query = session.createSQLQuery(
+//                "CALL InsertPersonBook(:Person, :Book)")
+//                .setParameter("Person", surname)
+//                .setParameter("Book", book);
+//        System.out.println(query.list().get(0));
 
-        System.out.println(query.list().get(0));
-
-
+        //from JPA 2.1
+        StoredProcedureQuery query = session
+                .createStoredProcedureQuery("InsertPersonBook")
+                .registerStoredProcedureParameter("SurmanePersonIn", String.class, ParameterMode.IN)
+                .registerStoredProcedureParameter("BookNameIN", String.class, ParameterMode.IN)
+                .setParameter("SurmanePersonIn", surname)
+                .setParameter("BookNameIN", book);
+        query.execute();
+        System.out.println(query.getResultList().get(0));
     }
-
 
 }
