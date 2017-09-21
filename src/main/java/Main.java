@@ -236,7 +236,19 @@ public class Main {
                 .setParameter("SurmanePersonIn", surname)
                 .setParameter("BookNameIN", book);
         query.execute();
-        System.out.println(query.getResultList().get(0));
+        String str = (String) query.getResultList().get(0);
+        System.out.println(str);
+
+        if(str.equals("OK")) {
+            Query query2 = session.createQuery("from " + "PersonEntity");
+            for (Object obj : query2.list()) {
+                session.refresh(obj);
+            }
+            query2 = session.createQuery("from " + "BookEntity ");
+            for (Object obj : query2.list()) {
+                session.refresh(obj);
+            }
+        }
     }
 
 }
