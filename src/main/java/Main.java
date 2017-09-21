@@ -45,12 +45,16 @@ public class Main {
             //AddBookForPerson(session);
             //ReadAllTable(session);
 
-            ReadCityTable(session);
-            updateCity(session);
-            ReadAllTable(session);
+//            ReadCityTable(session);
+//            updateCity(session);
+//            ReadAllTable(session);
+
+            ReadBookOfPerson(session);
+            AddPairPersonBookWithProcedure(session);
+            ReadBookOfPerson(session);
 
             System.out.println("Finish work!");
-        } finally { session.close();  }
+        } finally { session.close(); System.exit(0); }
     }
 
     private static void ReadAllTable(Session session){
@@ -207,6 +211,26 @@ public class Main {
             else {System.out.println("There is no the book");}
         }
         else {System.out.println("There is no this person");}
+
+    }
+
+
+    private static void AddPairPersonBookWithProcedure(Session session){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nInput Surname for Person: ");
+        String surname = input.next();
+        System.out.println("Input NameBook for Book: ");
+        String book = input.next();
+
+        session.beginTransaction();
+        Query query = session.createSQLQuery(
+                "CALL InsertPersonBook(:Person, :Book)")
+                .setParameter("Person", surname)
+                .setParameter("Book", book);
+        session.getTransaction().commit();
+
+        System.out.println(query.list().get(0));
+
 
     }
 
