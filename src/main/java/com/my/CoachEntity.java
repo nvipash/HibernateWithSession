@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "coach", schema = "lab_5", catalog = "")
+@Table(name = "coach", schema = "lab_5abc", catalog = "")
 public class CoachEntity {
     private int idCoach;
     private int numberPlace;

@@ -35,31 +35,26 @@ public class Main {
         try {
 
             ReadAllTable(session);
+//
+//            ReadCoachByTicket(session);
 
-//            ReadBookOfPerson(session);
+//            ReadTrainFilter(session);
 
-//            ReadCityFilter(session);
-
-//            ReadCityTable(session);
-//            insertCity(session);
-//            ReadCityTable(session);
-
-//            insertPerson(session);
+//            ReadTrainTable(session);
+//            insertTrain(session);
+//            ReadTrainTable(session);
 
 //            ReadCityFilter(session);
 
-//            AddBookForPerson(session);
-//            ReadAllTable(session);
+//            AddTicketForCoach(session);
 
 //            ReadCityTable(session);
-//            updateCity(session);
+//            updateCoach(session);
 //            ReadAllTable(session);
 
-//            ReadBookOfPerson(session);
-//            AddPairPersonBookWithProcedure(session);
-//            ReadBookOfPerson(session);
+            ReadCoachByTicket(session);
+//            AddPairTicketCoachWithProcedure(session);
 
-            System.out.println("Finish work!");
         } finally {
             session.close();
             System.exit(0);
@@ -70,178 +65,157 @@ public class Main {
 
 //region read coach
         Query query = session.createQuery("from " + "CoachEntity");
-        System.out.format("\ntable coach --------------------\n");
-        System.out.format("%6d %-12s %-12s %-10s %s\n", "id_coach", "number_place", "type_coach", "number_coach", "train_id");
+        System.out.format("\ntable coach ------------------------------------------------\n");
+        System.out.format("%-10s %-18s %-12s %-12s %s\n", "id_coach", "number_place", "type_coach", "number_coach", "train_id");
         for (Object object : query.list()) {
             CoachEntity coach = (CoachEntity) object;
-            System.out.format("%6d %-12s %-12s %-10s %s\n", coach.getIdCoach(),
-                    coach.getNumberPlace(), coach.getTypeCoach(), coach.getTrainByTrain().getNumberTrain(), coach.getNumberCoach());
+            System.out.format("%-10s %-18s %-12s %-12s %s\n", coach.getIdCoach(), coach.getNumberPlace(), coach.getTypeCoach(), coach.getNumberCoach(), coach.getTrainByTrain().getIdTrain());
         }
         //endregion
 
 //region read ticket
         query = session.createQuery("from " + "TicketEntity");
-        System.out.format("\nTable Book --------------------\n");
-        System.out.format("%3s %-18s %-18s %-18s %s\n", "id_ticket", "date_departuere", "place_departuere", "place_arrival", "price_ticket");
+        System.out.format("\ntable ticket ------------------------------------------------\n");
+        System.out.format("%-10s %-15s %-18s %s\n", "id_ticket", "date_departuere", "place_departuere", "price_ticket");
         for (Object object : query.list()) {
             TicketEntity ticket = (TicketEntity) object;
-            System.out.format("%3d %-18s %-18s %-18s %s\n", ticket.getIdTicket(), ticket.getDateDepartuere(), ticket.getPlaceDepartuere(), ticket.getPlaceArrival(), ticket.getPriceTicket());
+            System.out.format("%-10s %-15s %-18s %s\n", ticket.getIdTicket(), ticket.getDateDepartuere(), ticket.getPlaceDepartuere(), ticket.getPriceTicket());
         }
         //endregion
 
 //region read train
         query = session.createQuery("from " + "TrainEntity");
-        System.out.format("\nTable City --------------------\n");
-        for (Object obj : query.list()) {
-            TrainEntity train = (TrainEntity) obj;
-            System.out.format("%3d %s\n", train.getNumberTrain());
+        System.out.format("\ntable train ------------------------------------------------\n");
+        System.out.format("%s\n", "id_train");
+        for (Object object : query.list()) {
+            TrainEntity train = (TrainEntity) object;
+            System.out.format("%s\n", train.getIdTrain());
         }
         //endregion
 
     }
 
-    private static void ReadCityFilter(Session session) {
+    private static void ReadTrainFilter(Session session) {
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Input name city for Person: ");
-        String city_in = input.next();
+        System.out.println("\nInput train for coach:  ");
+        String TrainIn = input.next();
 
-        TrainEntity trainEntity = (TrainEntity) session.load(TrainEntity.class, city_in);
+        TrainEntity trainEntity = (TrainEntity) session.load(TrainEntity.class, TrainIn);
         if (trainEntity != null) {
-            System.out.format("\n%s: %s\n", city_in, "Surname");
+            System.out.format("\n(%s): %s\n", TrainIn, "number of places in this train");
             for (CoachEntity obj : trainEntity.getCoachByTrain())
-                System.out.format("    %s\n", obj.getNumberPlace());
-        } else System.out.println("invalid name of city");
+                System.out.format("%s\n", "place number #" + obj.getNumberPlace());
+        } else System.out.println("invalid number of train");
     }
 
-    private static void ReadBookOfPerson(Session session) {
+    private static void ReadCoachByTicket(Session session) {
         Query query = session.createQuery("from " + "CoachEntity");
-        System.out.format("\nTable Person --------------------\n");
-        System.out.format("%3s %-12s %-12s \n", "ID", "Surname", "Name");
-        for (Object obj : query.list()) {
-            CoachEntity person = (CoachEntity) obj;
-            System.out.format("%3s %-12s %-12s->\n", person.getIdCoach(), person.getNumberPlace(), person.getTypeCoach());
-            for (TicketEntity booky : person.getTickets()) {
-                System.out.format("\t\t%s // %s\n", booky.getDateDepartuere(), booky.getPlaceDepartuere());
+        System.out.format("\ntable coach ------------------------------------------------\n");
+        System.out.format("%-10s %-15s %-15s \n", "id_coach", "number_place", "type_coach");
+        for (Object object : query.list()) {
+            CoachEntity coaches = (CoachEntity) object;
+            System.out.format("%-10s %-12s %-15s->\n", coaches.getIdCoach(), coaches.getNumberPlace(), coaches.getTypeCoach());
+            for (TicketEntity tickets : coaches.getTickets()) {
+                System.out.format("%s // %s\n", tickets.getDateDepartuere(), tickets.getPlaceDepartuere());
             }
         }
     }
 
-    private static void ReadCityTable(Session session) {
+    private static void ReadTrainTable(Session session) {
 
         Query query = session.createQuery("from " + "TrainEntity");
-        System.out.format("\nTable City --------------------\n");
-        for (Object obj : query.list()) {
-            TrainEntity city = (TrainEntity) obj;
-            System.out.format("%s\n", city.getNumberTrain());
+        System.out.format("\ntable train ------------------------------------------------\n");
+        for (Object object : query.list()) {
+            TrainEntity city = (TrainEntity) object;
+            System.out.format("%s\n", city.getIdTrain());
         }
     }
 
-    private static void insertCity(Session session) {
+    private static void insertTrain(Session session) {
         Scanner input = new Scanner(System.in);
         System.out.println("Input a new name city: ");
-        String newcity = input.next();
+        String newTrain = input.next();
 
         session.beginTransaction();
-        TrainEntity trainEntity = new TrainEntity(newcity);
+        TrainEntity trainEntity = new TrainEntity(newTrain);
         session.save(trainEntity);
         session.getTransaction().commit();
 
-        System.out.println("end insert city");
+        System.out.println("end insert train");
     }
 
-    private static void insertPerson(Session session) {
+    private static void updateCoach(Session session) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Input new Person Surname: ");
-        int surname_new = Integer.parseInt(input.next());
-        System.out.println("Input new Person Surname: ");
-        String name_new = input.next();
-        System.out.println("Input the City for Person: ");
-        String city = input.next();
-        System.out.println("Input new Person Email: ");
-        String email = input.next();
+        System.out.println("\nInput number of coach what you want to update: ");
+        String numberCoach = input.next();
+        System.out.println("Input new number of coach: ");
+        String newNumberCoach = input.next();
 
-        session.beginTransaction();
-        CoachEntity coachEntity = new CoachEntity(surname_new, name_new, city, email);
-        session.save(coachEntity);
-        session.getTransaction().commit();
-        System.out.println("end insert person");
-    }
-
-    private static void updateCity(Session session) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("\nInput a name city: ");
-        String numberTrain = input.next();
-        System.out.println("Input new name city: ");
-        String newNumberTrain = input.next();
-
-        TrainEntity trainEntity = (TrainEntity) session.load(TrainEntity.class, numberTrain);
-        if (trainEntity != null) {
+        CoachEntity coachEntity = (CoachEntity) session.load(CoachEntity.class, numberCoach);
+        if (coachEntity != null) {
             session.beginTransaction();
-            Query query = session.createQuery("update TrainEntity set numberTrain=:code1  where numberTrain = :code2");
-            query.setParameter("code1", newNumberTrain);
-            query.setParameter("code2", numberTrain);
+            Query query = session.createQuery("update CoachEntity set numberCoach = :code1  where numberCoach = :code2");
+            query.setParameter("code1", newNumberCoach);
+            query.setParameter("code2", numberCoach);
             int result = query.executeUpdate();
             session.getTransaction().commit();
-            System.out.println("end update city: " + result);
-        } else System.out.println("There is no the city");
+            System.out.println("end update coaches: " + result);
+        } else System.out.println("There is no the coach");
     }
 
-    private static void AddBookForPerson(Session session) {
-        System.out.println("Give a book to person--------------");
+    private static void AddTicketForCoach(Session session) {
+        System.out.println("Give a ticket for coach------------------------------------------------");
         Scanner input = new Scanner(System.in);
-        System.out.println("Choose Person Surname:");
-        String surname_in = input.next();
-        System.out.println("Choose Name Book:");
-        String book_in = input.next();
+        System.out.println("Choose ticket date:");
+        String numberPlace = input.next();
+        System.out.println("Choose coach number of place:");
+        String dateDepartuere = input.next();
 
         Query query = session.createQuery("from " + "CoachEntity where numberPlace = :code");
-        query.setParameter("code", surname_in);
+        query.setParameter("code", numberPlace);
 
         if (!query.list().isEmpty()) {
-            //Give this person entity from query
             CoachEntity coachEntity = (CoachEntity) query.list().get(0);
-            //search the book entity  from query
             query = session.createQuery("from " + "TicketEntity where dateDepartuere = :code");
-            query.setParameter("code", book_in);
+            query.setParameter("code", dateDepartuere);
             if (!query.list().isEmpty()) {
-                //Give this book entity from query
                 TicketEntity ticketEntity = (TicketEntity) query.list().get(0);
                 session.beginTransaction();
                 coachEntity.addTicketEntity(ticketEntity);
                 session.save(coachEntity);
                 session.getTransaction().commit();
-                System.out.println("end insert boor for person");
+                System.out.println("end insert ticket for coach");
             } else {
-                System.out.println("There is no the book");
+                System.out.println("There is no the ticket");
             }
         } else {
-            System.out.println("There is no this person");
+            System.out.println("There is no this coach");
         }
 
     }
 
-    private static void AddPairPersonBookWithProcedure(Session session) {
+    private static void AddPairTicketCoachWithProcedure(Session session) {
         Scanner input = new Scanner(System.in);
-        System.out.println("\nInput Surname for Person: ");
-        String surname = input.next();
-        System.out.println("Input NameBook for Book: ");
-        String book = input.next();
-
-        //to JPA 2.0
-//        Query query = session.createSQLQuery(
-//                "CALL InsertPersonBook(:Person, :Book)")
-//                .setParameter("Person", surname)
-//                .setParameter("Book", book);
-//        System.out.println(query.list().get(0));
+        System.out.println("\nInput number of place: ");
+        String numberPlace = input.next();
+        String typeCoach = input.next();
+        System.out.println("Input number of coach: ");
+        String numberCoach = input.next();
+        System.out.println("Input train: ");
+        String train = input.next();
 
         //from JPA 2.1
         StoredProcedureQuery query = session
-                .createStoredProcedureQuery("InsertPersonBook")
-                .registerStoredProcedureParameter("SurmanePersonIn", String.class, ParameterMode.IN)
-                .registerStoredProcedureParameter("BookNameIN", String.class, ParameterMode.IN)
-                .setParameter("SurmanePersonIn", surname)
-                .setParameter("BookNameIN", book);
+                .createStoredProcedureQuery("InsertCoach")
+                .registerStoredProcedureParameter("number_place_in", String.class, ParameterMode.IN)
+                .registerStoredProcedureParameter("type_coach_in", String.class, ParameterMode.IN)
+                .registerStoredProcedureParameter("number_coach_in", String.class, ParameterMode.IN)
+                .registerStoredProcedureParameter("train_in", String.class, ParameterMode.IN)
+                .setParameter("number_place_in", numberPlace)
+                .setParameter("type_coach_in", typeCoach)
+                .setParameter("number_coach_in", numberCoach)
+                .setParameter("train_in", train);
         query.execute();
         String str = (String) query.getResultList().get(0);
         System.out.println(str);
@@ -251,7 +225,7 @@ public class Main {
             for (Object obj : query2.list()) {
                 session.refresh(obj);
             }
-            query2 = session.createQuery("from " + "TicketEntity ");
+            query2 = session.createQuery("from " + "TrainEntity");
             for (Object obj : query2.list()) {
                 session.refresh(obj);
             }

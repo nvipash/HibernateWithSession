@@ -1,9 +1,8 @@
-CREATE DATABASE IF NOT EXISTS lab_5;
-USE lab_5;
+CREATE DATABASE IF NOT EXISTS lab_5abc;
+USE lab_5abc;
 
 CREATE TABLE IF NOT EXISTS train (
-    id_train INT AUTO_INCREMENT PRIMARY KEY,
-    number_train VARCHAR(4) NOT NULL,
+    id_train VARCHAR(4) PRIMARY KEY,
     CONSTRAINT train_id_uindex UNIQUE (id_train)
 );
 
@@ -13,7 +12,7 @@ CREATE TABLE IF NOT EXISTS coach (
     number_place INT NOT NULL,
     type_coach VARCHAR(15) NOT NULL,
     number_coach VARCHAR(4) NOT NULL,
-    train_id INT NOT NULL,
+    train_id VARCHAR(4) NOT NULL default 'n/a',
     CONSTRAINT coach_id_uindex UNIQUE (id_coach),
     CONSTRAINT coach_street_id_fk FOREIGN KEY (train_id)
         REFERENCES train (id_train)
@@ -24,7 +23,6 @@ CREATE TABLE ticket (
     id_ticket INT AUTO_INCREMENT PRIMARY KEY,
     date_departuere DATE NOT NULL,
     place_departuere VARCHAR(25) NOT NULL,
-    place_arrival VARCHAR(25) NOT NULL,
     price_ticket INT NOT NULL,
     CONSTRAINT ticket_id_uindex UNIQUE (id_ticket)
 );
@@ -33,39 +31,33 @@ CREATE TABLE ticket (
 CREATE TABLE IF NOT EXISTS ticket_coach (
     ticket_id INT NOT NULL,
     coach_id INT NULL,
-    coach_number INT NULL,
-    CONSTRAINT ticket_coach_pharmacy_id_fk FOREIGN KEY (ticket_id)
+    CONSTRAINT ticket_coach_pharmacy_id_fk FOREIGN KEY (coach_id)
         REFERENCES coach (id_coach),
-    CONSTRAINT ticket_coach_medicines_id_fk FOREIGN KEY (coach_id)
+    CONSTRAINT coach_ticket_medicines_id_fk FOREIGN KEY (ticket_id)
         REFERENCES ticket (id_ticket)
 );
-
 CREATE INDEX ticket_coach_coach_id_fk
   ON ticket_coach (coach_id);
 
-
-insert into train (number_train) values
-				  ('122П'),
-				  ('891Р'),
-			      ('98Ж'),
-				  ('142В'),
-				  ('22М');
-
 insert into coach (number_place, type_coach, number_coach, train_id) values
-				  (32,'kupe', 13, 1),
-			      (54,'plackart', 21, 2),
-				  (12,'lux', 2, 3),
-				  (3,'plackart', 23, 4),
-				  (22,'lux', 5, 5);
+				  (32,'kupe', 13, '120П'),
+			      (54,'plackart', 21, '220Ж'),
+				  (12,'lux', 2, '99К'),
+                  (15,'kupe', 12, '220Ж'),
+				  (3,'plackart', 23, '311Т'),
+                  (4,'plackart', 24, '311Т'),
+				  (22,'lux', 5, '120П');
 
-insert into ticket (date_departuere, place_departuere, place_arrival, price_ticket) values
-				   ('2017-10-09', 'Lviv', 'Kyiv', 128),
-				   ('2018-06-29', 'Dnipro','Chernivtsi', 87),
-				   ('2017-02-05', 'Zaporizha', 'Uzhorod', 147),
-				   ('2017-04-22', 'Rivne','Kropyvnitskyi', 122),
-				   ('2017-04-22', 'Chonhar', 'Kropyvnitskyi', 90);
+insert into ticket (date_departuere, place_departuere, price_ticket) values
+				   ('2017-10-09', 'Lviv', 128),
+				   ('2018-06-29', 'Dnipro', 87),
+				   ('2017-02-05', 'Kropyvnitskyi', 147),
+				   ('2017-04-22', 'Dnipro', 160),
+                   ('2017-04-22', 'Rivne', 122),
+                   ('2017-04-22', 'Rivne', 122),
+				   ('2017-04-22', 'Chonhar', 90);
 
-insert ticket_coach (ticket_id, coach_id, coach_number) values (1, 11, 42), (2, 22, 34), (3, 33, 18), (4, 44, 2)
+insert train (id_train) values ('120П'), ('220Ж'), ('99К'), ('311Т');
 
 DELIMITER //
 DROP PROCEDURE IF EXISTS InsertCoach;//

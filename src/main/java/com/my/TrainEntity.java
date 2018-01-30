@@ -4,27 +4,26 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "train", schema = "lab_5", catalog = "")
+@Table(name = "train", schema = "lab_5abc", catalog = "")
 public class TrainEntity {
-    private int idTrain;
-    private String numberTrain;
+    private String idTrain;
     private Collection<CoachEntity> coachByTrain;
 
     public TrainEntity() {
     }
 
     public TrainEntity(String t) {
-        numberTrain = t;
+        idTrain = t;
     }
 
     @Id
-    @Column(name = "number_train", nullable = false, length = 4)
-    public String getNumberTrain() {
-        return numberTrain;
+    @Column(name = "id_train", nullable = false, length = 4)
+    public String getIdTrain() {
+        return idTrain;
     }
 
-    public void setNumberTrain(String train) {
-        this.numberTrain = train;
+    public void setIdTrain(String idTrain) {
+        this.idTrain = idTrain;
     }
 
     @Override
@@ -34,22 +33,22 @@ public class TrainEntity {
 
         TrainEntity that = (TrainEntity) object;
 
-        if (numberTrain != null ? !numberTrain.equals(that.numberTrain) : that.numberTrain != null) return false;
+        if (idTrain != null ? !idTrain.equals(that.idTrain) : that.idTrain != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        return numberTrain != null ? numberTrain.hashCode() : 0;
+        return idTrain != null ? idTrain.hashCode() : 0;
     }
 
-    @OneToMany(mappedBy = "train")
+    @OneToMany(mappedBy = "trainByTrain")
     public Collection<CoachEntity> getCoachByTrain() {
         return coachByTrain;
     }
 
-    public void setCoachByTrain(Collection<CoachEntity> ticketByTrain) {
-        this.coachByTrain = ticketByTrain;
+    public void setCoachByTrain(Collection<CoachEntity> coachByTrain) {
+        this.coachByTrain = coachByTrain;
     }
 }
